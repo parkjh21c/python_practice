@@ -16,9 +16,9 @@ calcul_formula = input("계산 식 : ")
 # 불러오기
 calcul = cal.calculate()
 
+# 수식을 리스트로 변환
 calcul_formula_list = calcul_formula.split()
 
+if (calcul_formula_list[1] == "+"):
+  calcul.add(calcul_formula_list[0], calcul_formula_list[2])
 
-# 덧셈
-if ("+" in calcul_formula):
-  calcul.add()
