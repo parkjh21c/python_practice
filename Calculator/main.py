@@ -10,30 +10,44 @@ print()
 print()
 
 # 입력
-print("식을 입력하세요")
+while (1):
+  print("식을 입력하세요")
+  print("종료하려면 -1을 입력하세요")
+  print("ex) 1 + 2")
 
-calcul_formula = input("계산 식 : ")
+  calcul_formula = input("계산 식 : ")
 
-# 수식을 리스트로 변환
-calcul_formula_list = calcul_formula.split()
+  if (calcul_formula == "-1"):
+    break
 
-# 계산
-calcul = cal.calculate()
+  # 수식을 리스트로 변환
+  calcul_formula_list = calcul_formula.split()
 
+  # 계산
+  calcul = cal.calculate()
 
-if (calcul_formula_list[1] == "+"):
-  answer = calcul.add(calcul_formula_list[0], calcul_formula_list[2])
+  try:
+    calcul_formula_list[0] = calcul.change_type(calcul_formula_list[0])
+    calcul_formula_list[2] = calcul.change_type(calcul_formula_list[2])
+  except:
+    print("옳바르지 않은 수식입니다!")
+    print()
+    continue
 
-elif (calcul_formula_list[1] == "-"):
-  answer = calcul.minus(calcul_formula_list[0], calcul_formula_list[2])
+  if (calcul_formula_list[1] == "+"):
+    answer = calcul.add(calcul_formula_list[0], calcul_formula_list[2])
 
-elif (calcul_formula_list[1] == "*"):
-  answer = calcul.multiplication(calcul_formula_list[0], calcul_formula_list[2])
+  elif (calcul_formula_list[1] == "-"):
+    answer = calcul.minus(calcul_formula_list[0], calcul_formula_list[2])
 
-elif (calcul_formula_list[1] == "/"):
-  answer = calcul.division(calcul_formula_list[0], calcul_formula_list[2])
+  elif (calcul_formula_list[1] == "*"):
+    answer = calcul.multiplication(calcul_formula_list[0], calcul_formula_list[2])
 
-else:
-  print("옳바르지 않은 수식입니다!")
+  elif (calcul_formula_list[1] == "/"):
+    answer = calcul.division(calcul_formula_list[0], calcul_formula_list[2])
 
-print(f"값 : {answer}")
+  else:
+    print("옳바르지 않은 수식입니다!")
+
+  print(f"값 : {answer}")
+  print()
