@@ -1,5 +1,6 @@
 import calculate as cal
 from datetime import datetime
+import time
 
 # 계산기 시작 안내 문구
 print("******* 계산기 (Version 1.0) *******")
@@ -7,7 +8,8 @@ print()
 print("project start : 2024-01-25")
 print("현재 날짜 : ", datetime.now().date())
 print()
-print()
+print("************************************")
+time.sleep(1)
 
 # 입력
 while (1):
@@ -32,6 +34,8 @@ while (1):
   except:
     print("옳바르지 않은 수식입니다!")
     print()
+    print("************************************")
+    time.sleep(1)
     continue
 
   if (calcul_formula_list[1] == "+"):
@@ -48,6 +52,12 @@ while (1):
 
   else:
     print("옳바르지 않은 수식입니다!")
+    print()
+    print("************************************")
+    time.sleep(1)
+    continue
 
   print(f"값 : {answer}")
   print()
+  print("************************************")
+  time.sleep(1)
