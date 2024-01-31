@@ -35,3 +35,8 @@ class calculate:
   def division(self, num1 : any, num2 : any):
     answer = num1 / num2
     return answer
+  
+  # 제곱(승)
+  def square(self, num1 : any, num2 : any):
+    answer = num1 ** num2
+    return answer

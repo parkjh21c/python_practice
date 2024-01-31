@@ -49,6 +49,9 @@ while (1):
 
   elif (calcul_formula_list[1] == "/"):
     answer = calcul.division(calcul_formula_list[0], calcul_formula_list[2])
+  
+  elif (calcul_formula_list[1] == "**"):
+    answer = calcul.square(calcul_formula_list[0], calcul_formula_list[2])
 
   else:
     print("옳바르지 않은 수식입니다!")
