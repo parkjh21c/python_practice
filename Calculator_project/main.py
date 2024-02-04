@@ -13,118 +13,49 @@ time.sleep(1)
 
 # 숫자, 기호 순서
 count = 0
+sign = 0
 calcul = cal.calculate()
 
 # 입력
 while (1):
+  time.sleep(1)
+  print()
   print("식을 입력하세요")
-  print("종료하려면 -1을 입력하세요")
-
-  # 숫자 입력받기
-  if (count % 2 == 0):
-    num_input = int(input("값 : "))
-
+  print("종료하려면 'end'를 입력하세요")
 
   # 기호 입력받기
+  if (count % 2 != 0):
+    sign = input("기호 : ")
+    if (sign == "end"):
+      break
+
+  # 숫자 입력받기
   else:
-    sign = input("값 : ")
-
-  # 여기서부터 수정 필요
-
-  if (sign == "+"):
-    answer = calcul.add(answer, calcul_formula_list[i + 1])
-
-  elif (sign == "-"):
-    answer = calcul.minus(answer, calcul_formula_list[i + 1])
-
-  elif (sign == "*"):
-    answer = calcul.multiplication(answer, calcul_formula_list[i + 1])
-
-  elif (sign == "/"):
-    answer = calcul.division(answer, calcul_formula_list[i + 1])
-  
-  elif (sign == "**"):
-    answer = calcul.square(answer, calcul_formula_list[i + 1])
-
-  else:
-    print("옳바르지 않은 수식입니다! (오류코드 1)")
-    print()
-    print("************************************")
-    time.sleep(1)
-    continue
-
-
-
-  
-
-  # 숫자 or 기호 받을건지 계산
-  count = 0
-
-  if (count % 2 == 1):
-    if (calcul_formula_list[i] == "+"):
-      answer = calcul.add(answer, calcul_formula_list[i + 1])
-
-    elif (calcul_formula_list[i] == "-"):
-      answer = calcul.minus(answer, calcul_formula_list[i + 1])
-
-    elif (calcul_formula_list[i] == "*"):
-      answer = calcul.multiplication(answer, calcul_formula_list[i + 1])
-
-    elif (calcul_formula_list[i] == "/"):
-      answer = calcul.division(answer, calcul_formula_list[i + 1])
+    try:
+      num_input = int(input("숫자 : "))
+    except:
+      break
     
-    elif (calcul_formula_list[i] == "**"):
-      answer = calcul.square(answer, calcul_formula_list[i + 1])
+    if (sign == "+"):
+      answer = calcul.add(answer, num_input)
 
-    else:
-      print("옳바르지 않은 수식입니다! (오류코드 1)")
-      print()
-      print("************************************")
-      time.sleep(1)
-      continue
+    elif (sign == "-"):
+      answer = calcul.minus(answer, num_input)
 
-  
+    elif (sign == "*"):
+      answer = calcul.multiplication(answer, num_input)
 
-
-  # 계산
-
-
-  try:
-    for i in range(0, calcul_formula_lest_len, 2):
-      calcul_formula_list[i] = calcul.change_type(calcul_formula_list[i])
-
-  except:
-    print("옳바르지 않은 수식입니다! (오류코드 0)")
-    print()
-    print("************************************")
-    time.sleep(1)
-    continue
-  
-  answer = calcul_formula_list[0]
-
-  # 기호만 검사
-  for i in range(1, calcul_formula_lest_len, 2):
-    if (calcul_formula_list[i] == "+"):
-      answer = calcul.add(answer, calcul_formula_list[i + 1])
-
-    elif (calcul_formula_list[i] == "-"):
-      answer = calcul.minus(answer, calcul_formula_list[i + 1])
-
-    elif (calcul_formula_list[i] == "*"):
-      answer = calcul.multiplication(answer, calcul_formula_list[i + 1])
-
-    elif (calcul_formula_list[i] == "/"):
-      answer = calcul.division(answer, calcul_formula_list[i + 1])
+    elif (sign == "/"):
+      answer = calcul.division(answer, num_input)
     
-    elif (calcul_formula_list[i] == "**"):
-      answer = calcul.square(answer, calcul_formula_list[i + 1])
+    elif (sign == "**"):
+      answer = calcul.square(answer, num_input)
 
+    # 기호가 없을 때
     else:
-      print("옳바르지 않은 수식입니다! (오류코드 1)")
-      print()
-      print("************************************")
-      time.sleep(1)
-      continue
+      answer = num_input
+  
+  count += 1
 
   print(f"값 : {answer}")
   print()
