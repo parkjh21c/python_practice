@@ -3,7 +3,7 @@ from datetime import datetime
 import time
 
 # 계산기 시작 안내 문구
-print("******* 계산기 (Version 1.0) *******")
+print("******* 계산기 (Version 1.1) *******")
 print()
 print("project start : 2024-01-25")
 print("현재 날짜 : ", datetime.now().date())
