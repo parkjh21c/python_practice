@@ -5,7 +5,8 @@ n = int(sys.stdin.readline())
 
 num = list(map(int, sys.stdin.readline().split()))
 
-answer = -1000
+answer = -10000
+
 
 for i in range(n):
   tmp = 0
