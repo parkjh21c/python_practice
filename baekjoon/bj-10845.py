@@ -76,15 +76,15 @@ Que = LinkedListQueue()
 for i in range(N):
   word = sys.stdin.readline()
 
-  if word == "pop":
+  if word == "pop\n":
     print(Que.dequeue())
-  elif word == "size":
+  elif word == "size\n":
     print(Que.size())
-  elif word == "empty":
+  elif word == "empty\n":
     print(Que.isEmpty())
-  elif word == "front":
+  elif word == "front\n":
     print(Que.print_front())
-  elif word == "back":
+  elif word == "back\n":
     print(Que.print_rear())
   else:
     [word, data] = word.split()
