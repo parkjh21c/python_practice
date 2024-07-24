@@ -1,7 +1,7 @@
-category,comment
-Positive,I really love this product!
-Negative,I did not like it at all.
-Positive,Thank you for the excellent customer service.
-Neutral,It was okay.
-Negative,I will never buy this again.
-Positive,Highly recommend!
+category,comment,count
+Positive,I really love this product!,8
+Negative,I did not like it at all.,7
+Positive,Thank you for the excellent customer service.,3
+Neutral,It was okay.,10
+Negative,I will never buy this again.,4
+Positive,Highly recommend!,4

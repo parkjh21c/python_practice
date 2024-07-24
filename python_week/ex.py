@@ -1,4 +1,5 @@
 import pandas as pd
+import random as r
 
 # 데이터 예시 생성
 data = {
@@ -10,7 +11,8 @@ data = {
         'It was okay.',
         'I will never buy this again.',
         'Highly recommend!'
-    ]
+    ],
+    'count' : [r.randint(1,10), r.randint(1,10), r.randint(1,10), r.randint(1,10), r.randint(1,10), r.randint(1,10)]
 }
 
 # 데이터프레임 생성
